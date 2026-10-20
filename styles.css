@@ -377,3 +377,8 @@ a { color: inherit; }
 }
 .depth.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .depth { opacity: 1; transform: none; } }
+
+/* Acceso discreto al panel */
+.staff { display: inline-grid; place-items: center; width: 28px; height: 28px; color: var(--ink-soft); opacity: .28; transition: opacity .3s; }
+.staff svg { width: 12px; height: 14px; }
+.staff:hover, .staff:focus-visible { opacity: .8; }
