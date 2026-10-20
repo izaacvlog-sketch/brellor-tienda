@@ -11,26 +11,30 @@
   <link rel="icon" type="image/png" href="img/favicon.png">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <meta property="og:image" content="img/apple-touch-icon.png">
-  <script>
-    (function(){var d=document.documentElement,s=false;try{s=sessionStorage.getItem("brellor_intro")==="1"}catch(e){}
-    if(s||matchMedia("(prefers-reduced-motion: reduce)").matches)d.classList.add("no-intro");else d.classList.add("intro-play");})();
-  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="intro" id="intro" aria-hidden="true">
-    <div class="intro-stage">
-      <div class="intro-gem">
-        <img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:11.2"><img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:9.6"><img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:8.0"><img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:6.4"><img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:4.8"><img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:3.2"><img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:1.6">
-        <img src="img/logo-blanco.webp" alt="">
-        <span class="shine"></span>
+  <section class="stage" id="stage" aria-label="BRELLOR MX">
+    <div class="stage-pin" id="stagePin">
+      <div class="stage-glow" aria-hidden="true"></div>
+      <div class="s-logo">
+        <div class="s-spin" id="sSpin">
+          <img class="s-face" src="img/logo-blanco.webp" alt="Logo BRELLOR" width="640" height="769">
+          <span class="shine" aria-hidden="true"></span>
+        </div>
       </div>
-      <div class="intro-word"><span>BRELLOR</span><em>MX</em></div>
+      <div class="s-name" role="heading" aria-level="1" aria-label="BRELLOR MX">
+        <span class="s-word" aria-hidden="true"><i style="--i:0">B</i><i style="--i:1">R</i><i style="--i:2">E</i><i style="--i:3">L</i><i style="--i:4">L</i><i style="--i:5">O</i><i style="--i:6">R</i></span>
+        <span class="s-mx" aria-hidden="true">MX</span>
+      </div>
+      <p class="s-tag">Joyas que trascienden generaciones</p>
+      <a class="s-hint" href="#inicio" aria-label="Bajar al contenido"><span>Desliza</span></a>
     </div>
-  </div>
+  </section>
+
   <div class="topbar" id="topbar">Envíos a todo México · Mérida · Tapachula</div>
 
   <header class="site-head">
@@ -47,27 +51,21 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" id="inicio">
       <div class="wrap">
         <div>
-          <div class="eyebrow reveal d1">Joyería fina · Oro y piedras preciosas</div>
-          <h1 class="reveal d2">Joyas que trascienden <em>generaciones</em></h1>
-          <div class="rule reveal d3"></div>
-          <p class="lede reveal d3">Oro, diamantes, perlas y piedras preciosas seleccionadas pieza por pieza. Cadenas, aretes, anillos y pulsos para estrenar hoy y heredar mañana.</p>
-          <div class="hero-actions reveal d4">
+          <div class="eyebrow depth">Joyería fina · Oro y piedras preciosas</div>
+          <h2 class="title depth" style="--dl:80ms">Joyas que trascienden <em>generaciones</em></h2>
+          <div class="rule depth" style="--dl:160ms"></div>
+          <p class="lede depth" style="--dl:200ms">Oro, diamantes, perlas y piedras preciosas seleccionadas pieza por pieza. Cadenas, aretes, anillos y pulsos para estrenar hoy y heredar mañana.</p>
+          <div class="hero-actions depth" style="--dl:260ms">
             <a class="btn" href="#catalogo">Ver catálogo</a>
             <a class="btn ghost" id="heroWa" href="#" target="_blank" rel="noopener" hidden>Escríbenos</a>
           </div>
-          <div class="hero-places reveal d4" id="heroPlaces"></div>
+          <div class="hero-places depth" style="--dl:320ms" id="heroPlaces"></div>
         </div>
-        <div class="hero-art reveal d3" id="heroArt">
-          <div class="gem-fallback">
-            <div class="hero-logo">
-              <img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:11.2"><img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:9.6"><img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:8.0"><img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:6.4"><img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:4.8"><img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:3.2"><img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:1.6">
-              <img src="img/logo-blanco.webp" alt="BRELLOR">
-              <span class="shine loop"></span>
-            </div>
-          </div>
+        <div class="hero-art depth" style="--dl:120ms" id="heroArt">
+          <div class="gem-fallback"><img src="img/logo-blanco.webp" alt="" width="640" height="769"></div>
           <span class="caption">BRELLOR · Colección</span>
         </div>
       </div>

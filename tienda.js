@@ -164,20 +164,31 @@
     document.querySelectorAll(".depth:not(.in)").forEach((el) => io ? io.observe(el) : el.classList.add("in"));
   }
 
-  function runIntro() {
-    const root = document.documentElement, intro = $("#intro");
-    if (!root.classList.contains("intro-play")) return;
-    let done = false;
-    const finish = () => {
-      if (done) return; done = true;
-      try { sessionStorage.setItem("brellor_intro", "1"); } catch {}
-      intro.classList.add("out");
-      setTimeout(() => root.classList.remove("intro-play"), 450);
-      setTimeout(() => { root.classList.add("no-intro"); }, 1100);
+  // Portada: el logo deja de ser 3D al terminar de girar (evita temblor) + scroll suave estilo parallax
+  function setupStage() {
+    const stage = $("#stage"), pin = $("#stagePin"), spin = $("#sSpin");
+    if (!stage) return;
+    const settle = () => spin.classList.add("settled");
+    spin.addEventListener("animationend", (e) => { if (e.animationName === "spinIn") settle(); });
+    setTimeout(settle, 2200); // por si el navegador no avisa
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let cur = 0, target = 0, running = false;
+    const measure = () => {
+      const r = stage.getBoundingClientRect();
+      const span = Math.max(1, stage.offsetHeight - innerHeight);
+      const t = Math.min(1, Math.max(0, -r.top / span));
+      target = t * t * (3 - 2 * t); // smoothstep
     };
-    setTimeout(finish, 3700);
-    intro.addEventListener("click", finish);
-    window.addEventListener("keydown", finish, { once: true });
+    const tick = () => {
+      cur += (target - cur) * 0.14;
+      if (Math.abs(target - cur) < 0.0005) cur = target;
+      pin.style.setProperty("--p", cur.toFixed(4));
+      if (cur !== target) requestAnimationFrame(tick); else running = false;
+    };
+    const kick = () => { measure(); if (!running) { running = true; requestAnimationFrame(tick); } };
+    addEventListener("scroll", kick, { passive: true });
+    addEventListener("resize", kick);
+    kick();
   }
 
   if (matchMedia("(hover: hover) and (pointer: fine)").matches) {
@@ -436,7 +447,7 @@
     }
     const rm = t.closest("[data-rm]");
     if (rm) { state.cart = state.cart.filter((i) => i.id !== rm.dataset.rm); saveCart(); renderCartCount(); renderCart(); return; }
-    if (t.closest("#toForm")) { state.step = "datos"; renderCart(); setTimeout(() => $("#fNombre")?.focus(), 60); return; }
+    if (t.closest("#toForm")) { state.step = "datos"; renderCart(); setTimeout(() => { if (!/INPUT|TEXTAREA/.test(document.activeElement?.tagName)) $("#fNombre")?.focus(); }, 60); return; }
     if (t.closest("#backCart")) { state.step = "lista"; renderCart(); return; }
     if (t.closest("#sendOrder")) { sendOrder(); return; }
   });
@@ -444,7 +455,7 @@
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeSheets(); });
   window.addEventListener("hashchange", route);
 
-  runIntro();
+  setupStage();
   observeDepth();
   load();
 })();
