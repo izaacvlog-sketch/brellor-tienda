@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BRELLOR · Joyería fina</title>
+  <meta name="description" content="BRELLOR, joyas que trascienden generaciones. Oro, diamantes, perlas y piedras preciosas. Mérida y Tapachula, envíos a todo México.">
+  <meta property="og:title" content="BRELLOR · Joyería fina">
+  <meta property="og:description" content="Oro, diamantes, perlas y piedras preciosas. Cadenas, aretes, anillos, pulsos e Ice Chain.">
+  <meta name="theme-color" content="#0e1b3a">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <meta property="og:image" content="img/apple-touch-icon.png">
+  <script>
+    (function(){var d=document.documentElement,s=false;try{s=sessionStorage.getItem("brellor_intro")==="1"}catch(e){}
+    if(s||matchMedia("(prefers-reduced-motion: reduce)").matches)d.classList.add("no-intro");else d.classList.add("intro-play");})();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="intro-stage">
+      <div class="intro-gem">
+        <img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:11.2"><img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:9.6"><img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:8.0"><img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:6.4"><img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:4.8"><img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:3.2"><img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:1.6">
+        <img src="img/logo-blanco.webp" alt="">
+        <span class="shine"></span>
+      </div>
+      <div class="intro-word"><span>BRELLOR</span><em>MX</em></div>
+    </div>
+  </div>
+  <div class="topbar" id="topbar">Envíos a todo México · Mérida · Tapachula</div>
+
+  <header class="site-head">
+    <div class="wrap">
+      <a class="brand" href="#" aria-label="BRELLOR inicio">
+        <img class="brand-mark" src="img/logo-azul.webp" alt="" width="34" height="41">
+        <span class="brand-word">BRELLOR</span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Secciones"></nav>
+      <button class="cart-btn" id="cartBtn" aria-label="Abrir carrito">
+        <span class="lbl">Carrito</span><span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <div class="eyebrow reveal d1">Joyería fina · Oro y piedras preciosas</div>
+          <h1 class="reveal d2">Joyas que trascienden <em>generaciones</em></h1>
+          <div class="rule reveal d3"></div>
+          <p class="lede reveal d3">Oro, diamantes, perlas y piedras preciosas seleccionadas pieza por pieza. Cadenas, aretes, anillos y pulsos para estrenar hoy y heredar mañana.</p>
+          <div class="hero-actions reveal d4">
+            <a class="btn" href="#catalogo">Ver catálogo</a>
+            <a class="btn ghost" id="heroWa" href="#" target="_blank" rel="noopener" hidden>Escríbenos</a>
+          </div>
+          <div class="hero-places reveal d4" id="heroPlaces"></div>
+        </div>
+        <div class="hero-art reveal d3" id="heroArt">
+          <div class="gem-fallback">
+            <div class="hero-logo">
+              <img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:11.2"><img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:9.6"><img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:8.0"><img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:6.4"><img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:4.8"><img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:3.2"><img class="depth-l" src="img/logo-blanco.webp" alt="" style="--z:1.6">
+              <img src="img/logo-blanco.webp" alt="BRELLOR">
+              <span class="shine loop"></span>
+            </div>
+          </div>
+          <span class="caption">BRELLOR · Colección</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog" id="catalogo">
+      <div class="wrap">
+        <div class="catalog-head depth">
+          <div>
+            <div class="eyebrow">Catálogo</div>
+            <h2 id="catTitle">Todas las piezas</h2>
+          </div>
+          <p class="hint" id="catCount"></p>
+        </div>
+        <div class="chips" id="chips" role="toolbar" aria-label="Filtrar por sección"></div>
+        <div class="grid" id="grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="promise">
+      <div class="wrap">
+        <h2 class="depth">Una pieza bien hecha <em>dura</em> más que una vida.</h2>
+        <div class="depth" style="--dl:120ms"><h4>Materiales</h4><p>Oro, diamantes, perlas y piedras preciosas, elegidas a mano.</p></div>
+        <div class="depth" style="--dl:240ms"><h4>Atención directa</h4><p>Te acompañamos por WhatsApp desde que eliges hasta que la recibes.</p></div>
+        <div class="depth" style="--dl:360ms"><h4>Envíos</h4><p>Entrega en Mérida y Tapachula, y envíos asegurados a todo México.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap depth">
+      <span>© <span id="year"></span> BRELLOR · Joyas que trascienden generaciones</span>
+      <span id="footLinks"></span>
+    </div>
+  </footer>
+
+  <!-- Pieza -->
+  <div class="scrim" id="scrim"></div>
+  <aside class="sheet" id="pieceSheet" aria-label="Detalle de la pieza" aria-hidden="true">
+    <div class="sheet-head"><h3>Detalle</h3><button class="x" data-close aria-label="Cerrar">×</button></div>
+    <div class="sheet-body" id="pieceBody"></div>
+  </aside>
+
+  <!-- Carrito -->
+  <aside class="sheet" id="cartSheet" aria-label="Carrito" aria-hidden="true">
+    <div class="sheet-head"><h3 id="cartTitle">Tu carrito</h3><button class="x" data-close aria-label="Cerrar">×</button></div>
+    <div class="sheet-body" id="cartBody"></div>
+    <div class="sheet-foot" id="cartFoot"></div>
+  </aside>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="config.js"></script>
+  <script src="tienda.js"></script>
+</body>
+</html>

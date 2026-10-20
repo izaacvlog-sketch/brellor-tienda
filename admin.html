@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BRELLOR · Administración</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0e1b3a">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin">
+  <div id="app"></div>
+  <div class="scrim" id="scrim"></div>
+  <aside class="sheet wide" id="editor" aria-label="Editar pieza" aria-hidden="true">
+    <div class="sheet-head"><h3 id="edTitle">Nueva pieza</h3><button class="x" data-close aria-label="Cerrar">×</button></div>
+    <div class="sheet-body" id="edBody"></div>
+    <div class="sheet-foot" id="edFoot"></div>
+  </aside>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
